@@ -6,6 +6,6 @@ class User < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.string :uid
       t.string :provider
-
+    end
   end
 end
