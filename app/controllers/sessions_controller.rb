@@ -20,13 +20,14 @@ class SessionsController < ApplicationController
  
  
     def destroy
-      session.clear
-      redirect_to root_path
+      session[:user_id] = nil
+      redirect_to root_path, notice: "Logged out"
+      # session.clear
+      # redirect_to root_path
     end
  
  
     def google
-      
       @user = User.find_or_create_by(email: auth["info"]["email"]) do |user|
        user.username = auth["info"]["username"]
        user.password = SecureRandom.hex(10)
