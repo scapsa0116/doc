@@ -1,0 +1,20 @@
+<h1><%= current_user.username %></h1><h3> JBP 2021</h3>
+<h1>Canal Distribuidores</h1>
+
+<%= form_for(@document) do |f| %>
+  
+  
+
+<%= f.label :distribuidor %>
+<%= f.text_field :distribuidor, placeholder: "distribuidor" %><br><br>
+<%= f.label :responsavel %>
+<%= f.text_field :responsavel, placeholder: "responsavel"%><br><br>
+<%= f.label :created_at %>
+<%= f.date_select :created_at %><br>
+
+
+<%= f.submit "Submit" %>
+<% end %>
+
+
+

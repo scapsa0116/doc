@@ -22,8 +22,6 @@ class SessionsController < ApplicationController
     def destroy
       session[:user_id] = nil
       redirect_to root_path, notice: "Logged out"
-      # session.clear
-      # redirect_to root_path
     end
  
  
@@ -41,9 +39,7 @@ class SessionsController < ApplicationController
     end 
  
     private
-    
-    def auth
+     def auth
        request.env['omniauth.auth']
      end
- 
  end

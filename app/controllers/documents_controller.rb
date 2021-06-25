@@ -12,21 +12,26 @@ class DocumentsController < ApplicationController
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-        @documents = @user.documents.alpha
+        @documents = @user.documents
      else
        @error = "That user doesn't exist" if params[:user_id]
-    #    @documents = Job.alpha.includes(:category, :user)
+       @documents = Document.all
      end
- 
-    #  @jobs = @jobs.search(params[:q].downcase) if params[:q] && !params[:q].empty?
-    #  @jobs = @jobs.filter(params[:job][:category_id]) if params[:job] && params[:job][:category_id] != ""
- 
-   end
+    end
+
+
+
+    
+
+
+
+
 
 
    def create
-    @document = current_user.documents.build(document_params)
-    #binding.pry
+    @document = Document.new(document_params)
+    @document.user = current_user
+  #  binding.pry
     if @document.save
     redirect_to documents_path
     else
@@ -34,6 +39,9 @@ class DocumentsController < ApplicationController
     end
 end 
 
+# @child = Child.new child_params
+# @child.user = current_user
+# @child.save
 
 def edit
     @document = Document.find_by_id(params[:id])
@@ -61,8 +69,8 @@ end
 
 private
 
-def job_params
-    params.require(:document).permit(:first_name, :last_name, :phone_number, :busness_email, :title, :description, :category_id, :category_attributes)
+def document_params
+    params.require(:document).permit(:distribuidor, :responsavel, :data, :created_at)
 end
 
 

@@ -1,0 +1,8 @@
+documents/index
+<% @documents.each do |d| %>
+    
+<h1><%= d.distribuidor %></h1>
+<h2><%= d.responsavel %></h2>
+<h2><%= d.created_at %></h2>
+
+<% end %>
