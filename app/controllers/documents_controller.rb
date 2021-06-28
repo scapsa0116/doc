@@ -20,15 +20,7 @@ class DocumentsController < ApplicationController
     end
 
 
-
-    
-
-
-
-
-
-
-   def create
+ def create
     @document = Document.new(document_params)
     @document.user = current_user
   #  binding.pry
