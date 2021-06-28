@@ -62,7 +62,7 @@ end
 private
 
 def document_params
-    params.require(:document).permit(:distribuidor, :responsavel, :data, :created_at)
+    params.require(:document).permit(:distribuidor, :responsavel, :data, :created_at, :visao, :missao, :codico, :snpj, :endereco, :email, :matriz, :filial, :filiall)
 end
 
 
