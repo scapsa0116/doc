@@ -1,10 +1,61 @@
 documents/index
+<table class="styled-table">
 <% @documents.each do |d| %>
     
-<h1><%= d.distribuidor %></h1>
-<h2><%= d.responsavel %></h2>
-<h2><%= d.created_at %></h2>
+
+
+<tbody>
+<tr>
+<td><h1><%= d.distribuidor %></h1> </td>
+</tr>
+<tr>
+<td><h2><%= d.responsavel %></h2> </td>
+</tr>
+<tr>
+<td><h2><%= d.created_at %></h2> </td>
+</tr>
+
+</tbody>
+
+<table class="styled-table">
+<tbody>
+<tr>
+<td><%= d.visao %></td>
+</tr>
+<tr>
+<td><%= d.missao %></td>
+</tr>
+</tbody>
+</table>
+
+<table class="styled-table">
+<tbody>
+<tr>
+<td><%= d.codico %></td>
+</tr>
+<tr>
+<td><%= d.snpj %></td>
+</tr>
+<tr>
+<td><%= d.endereco %></td>
+</tr>
+<tr>
+<td><%= d.email %></td>
+</tr>
+<tr>
+<td><%= d.matriz %>
+</tr>
+<tr>
+<td><%= d.filial %></td>
+</tr>
+<tr>
+<td><%= d.filiall %></td>
+</tr>
+</tbody>
+</table>
+
+
 
 <% end %>
-
+</table>
 

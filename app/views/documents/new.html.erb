@@ -1,17 +1,15 @@
-<h1><%= current_user.username %></h1><h3> JBP 2021</h3>
+<h1><%= current_user.username %></h1>
 
-
-
-
-<h1>Canal Distribuidores</h1>
 <table class="styled-table">
+
 <tbody>
+<h3> JBP 2021</h3>
+<h1>Canal Distribuidores</h1>
 <%= form_for(@document) do |f| %>
   
 <tr>
-
-    <td><%= f.label :distribuidor %></td>
-    <td><%= f.text_field :distribuidor, placeholder: "distribuidor" %><br><br></td>
+<td><%= f.label :distribuidor %></td>
+<td><%= f.text_field :distribuidor, placeholder: "distribuidor" %><br><br></td>
 </tr>
 <tr>
 <td><%= f.label :responsavel %></td>
