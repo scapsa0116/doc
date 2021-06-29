@@ -1,41 +1,80 @@
 <h1><%= current_user.username %></h1><h3> JBP 2021</h3>
-<h1>Canal Distribuidores</h1>
 
+
+
+
+<h1>Canal Distribuidores</h1>
+<table class="styled-table">
+<tbody>
 <%= form_for(@document) do |f| %>
   
-  
+<tr>
 
-<%= f.label :distribuidor %>
-<%= f.text_field :distribuidor, placeholder: "distribuidor" %><br><br>
-<%= f.label :responsavel %>
-<%= f.text_field :responsavel, placeholder: "responsavel"%><br><br>
-<%= f.label :created_at %>
-<%= f.date_select :created_at %><br><br>
-<%= f.label :visao %>
-<%= f.text_field :visao, placeholder: "visao" %><br><br>
-<%= f.label :missao %>
-<%= f.text_field :missao, placeholder: "missao"%><br><br>
+    <td><%= f.label :distribuidor %></td>
+    <td><%= f.text_field :distribuidor, placeholder: "distribuidor" %><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :responsavel %></td>
+<td><%= f.text_field :responsavel, placeholder: "responsavel"%><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :created_at %></td>
+<td><%= f.datetime_local_field :created_at %><br><br></td>
+</tr>
+</tbody><br><br>
+</table>
 
+<table class="styled-table">
+<tbody>
+<tr>
+<td><%= f.label :visao %>v
+<td><%= f.text_field :visao, placeholder: "visao" %><br><br></td>
+<tr>
+<tr>
+<td><%= f.label :missao %></td>
+<td><%= f.text_field :missao, placeholder: "missao"%><br><br></td>
+</tr>
+</tbody>
+</table>
 
-<%= f.label :codico %>
-<%= f.text_field :codico, placeholder: "codico" %><br><br>
-<%= f.label :snpj %>
-<%= f.text_field :snpj, placeholder: "snpj"%><br><br>
-<%= f.label :endereco %>
-<%= f.text_field :endereco, placeholder: "endereco" %><br><br>
-<%= f.label :email %>
-<%= f.email_field :email, placeholder: "email"%><br><br>
-<%= f.label :matriz %>
-<%= f.text_field :matriz, placeholder: "matriz" %><br><br>
-<%= f.label :filial %>
-<%= f.text_field :filial, placeholder: "filial"%><br><br>
-<%= f.label :filiall %>
-<%= f.text_field :filiall, placeholder: "filiall"%><br><br>
-
-
+<table class="styled-table">
+<tbody>
+<tr>
+<td><%= f.label :codico %></td>
+<td><%= f.text_field :codico, placeholder: "codico" %><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :snpj %>
+<td><%= f.text_field :snpj, placeholder: "snpj"%><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :endereco %></td>
+<td><%= f.text_field :endereco, placeholder: "endereco" %><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :email %></td>
+<td><%= f.email_field :email, placeholder: "email"%><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :matriz %>
+<td><%= f.text_field :matriz, placeholder: "matriz" %><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :filial %></td>
+<td><%= f.text_field :filial, placeholder: "filial"%><br><br></td>
+</tr>
+<tr>
+<td><%= f.label :filiall %></td>
+<td><%= f.text_field :filiall, placeholder: "filiall"%><br><br></td>
+</tr>
+</tbody>
+</table>
 
 <%= f.submit "Submit" %>
 <% end %>
 
 
 
+
+    
+</table>
