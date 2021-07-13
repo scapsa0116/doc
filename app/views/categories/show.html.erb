@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @category.name %> - <%= pluralize(@category.documentss.count, "codumentss") %></h1>
+
+<ol>
+    <% @category.documents.each do  |document| %>
+      <li><%= link_to document.responsavel, document_path(document)  %></li>
+    <% end  %>
+</ol>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_144102) do
+ActiveRecord::Schema.define(version: 2021_07_13_162417) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_07_13_144102) do
     t.string "matriz"
     t.string "filial"
     t.string "filiall"
+    t.integer "category_id"
     t.index ["user_id"], name: "index_documents_on_user_id"
   end
 

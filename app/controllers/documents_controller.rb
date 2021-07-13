@@ -7,6 +7,7 @@ class DocumentsController < ApplicationController
         else
         @document = Document.new
         end
+        # binding.pry
          @document.build_category 
     end
 
@@ -22,10 +23,10 @@ class DocumentsController < ApplicationController
 
 
  def create
-   @document = current_user.documents.build(document_params)
-    # @document = Document.new(document_params)
-    # @document.user = current_user
-  #  binding.pry
+  #  @document = current_user.documents.build(document_params)
+    @document = Document.new(document_params)
+    @document.user = current_user
+  binding.pry
     if @document.save
     redirect_to documents_path
     else

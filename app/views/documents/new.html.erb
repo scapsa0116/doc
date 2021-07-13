@@ -6,13 +6,13 @@
 <h3> JBP 2021</h3>
 <h1>Canal Distribuidores</h1>
 <%= form_for(@document) do |f| %>
-    
-    <tr>
-    <td>Company Name:</td>
-    <%= f.fields_for :category_attributes do |c|%>
-        <td><%= c.text_field :name%></td>
-    <% end %>
-    </tr>
+
+<tr>
+<td>Company Name:</td>
+<%= f.fields_for :category_attributes do |c|%>
+<td><%= c.text_field :name%></td>
+<% end %>
+</tr>
   
 <tr>
 <td><%= f.label :distribuidor %></td>
