@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
         # @documents = @user.documents
-        @documentss = @user.documentss.apha
+        @documentss = @user.documentss.alpha
      else
        @error = "That user doesn't exist" if params[:user_id]
        @documents = Document.alpha.includes(:category, :user)
@@ -23,7 +23,7 @@ class DocumentsController < ApplicationController
 
 
  def create
-  @document = current_user.document.build(document_params)
+  @document = current_user.documents.build(document_params)
     # @document = Document.new(document_params)
     # @document.user = current_user
   # binding.pry
@@ -34,9 +34,6 @@ class DocumentsController < ApplicationController
     end
 end 
 
-# @child = Child.new child_params
-# @child.user = current_user
-# @child.save
 
 def edit
     @document = Document.find_by_id(params[:id])

@@ -3,10 +3,11 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:documents)
   end
 # GET /categories/1 or /categories/1.json
   def show
+    @category = Category.find_by_id(params[:id])
   end
 # GET /categories/new
   def new
