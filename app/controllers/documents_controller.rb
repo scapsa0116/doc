@@ -7,22 +7,24 @@ class DocumentsController < ApplicationController
         else
         @document = Document.new
         end
-        # @document.build_category 
+         @document.build_category 
     end
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-        @documents = @user.documents
+        # @documents = @user.documents
+        @documentss = @user.documentss.apha
      else
        @error = "That user doesn't exist" if params[:user_id]
-       @documents = Document.all
+       @documents = Document.alpha.includes(:category, :user)
      end
     end
 
 
  def create
-    @document = Document.new(document_params)
-    @document.user = current_user
+   @document = current_user.documents.build(document_params)
+    # @document = Document.new(document_params)
+    # @document.user = current_user
   #  binding.pry
     if @document.save
     redirect_to documents_path
@@ -38,7 +40,7 @@ end
 def edit
     @document = Document.find_by_id(params[:id])
     redirect_to documents_path if !@document || @document.user != current_user
-    # @document.build_category if !@job.category
+    @document.build_category if !@job.category
   end
 
   def update
@@ -62,7 +64,7 @@ end
 private
 
 def document_params
-    params.require(:document).permit(:distribuidor, :responsavel, :data, :created_at, :visao, :missao, :codico, :snpj, :endereco, :email, :matriz, :filial, :filiall)
+    params.require(:document).permit(:distribuidor, :responsavel, :data, :created_at, :visao, :missao, :codico, :snpj, :endereco, :email, :matriz, :filial, :filiall, :category_id, :category_attributes)
 end
 
 
