@@ -23,10 +23,10 @@ class DocumentsController < ApplicationController
 
 
  def create
-  #  @document = current_user.documents.build(document_params)
-    @document = Document.new(document_params)
-    @document.user = current_user
-  binding.pry
+  @document = current_user.document.build(document_params)
+    # @document = Document.new(document_params)
+    # @document.user = current_user
+  # binding.pry
     if @document.save
     redirect_to documents_path
     else
