@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
  def create
   # @document = current_user.documents.build(document_params)
     @document = Document.new(document_params)
-    @document.user = current_user
+     @document.user = current_user
   # binding.pry
     if @document.save
        binding.pry
