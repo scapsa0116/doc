@@ -25,13 +25,12 @@ class DocumentsController < ApplicationController
  def create
   # @document = current_user.documents.build(document_params)
     @document = Document.new(document_params)
-     @document.user = current_user
+    #  @document.user = current_user
   # binding.pry
     if @document.save
-       binding.pry
+      #  binding.pry
       flash[:success] = 'Your question has been posted!'
-    redirect_to documents_path
-    else
+    redirect_to @documents
      render :new
     end
 end 
